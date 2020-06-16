@@ -9,13 +9,14 @@ podTemplate(
 
   node(POD_LABEL) {
     ansiColor('xterm') {
-    stage('Build a Maven project') {
-      git 'https://github.com/amenaafreen/spring-boot-maven-example-helloworld.git'
-      container('maven') {
-          sh '''\
-              export MAVEN_OPTS="-Dmaven.repo.local=/home/jenkins/workspace/.m2/repository" 
-              mvn -Dstyle.color=always clean package
-        }     '''
+         stage('Build a Maven project') {
+                 git 'https://github.com/amenaafreen/spring-boot-maven-example-helloworld.git'
+                container('maven') {
+                           sh '''\
+                                export MAVEN_OPTS="-Dmaven.repo.local=/home/jenkins/workspace/.m2/repository" 
+                                mvn -Dstyle.color=always clean package
+                               '''
+                }
       }
     }
   }
