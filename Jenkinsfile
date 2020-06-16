@@ -13,7 +13,7 @@ podTemplate(
       container('maven') {
           sh '''\
               export MAVEN_OPTS="-Dmaven.repo.local=/home/jenkins/workspace/.m2/repository" 
-              mvn -B clean package
+              mvn -Dstyle.color=always clean package
              '''
       }
     }
