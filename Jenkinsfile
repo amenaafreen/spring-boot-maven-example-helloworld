@@ -11,7 +11,7 @@ podTemplate(
     wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm', 'defaultFg': 1, 'defaultBg': 2]) {
         // This is the current syntax for invoking a build wrapper, naming the class.
         wrap([$class: 'TimestamperBuildWrapper']) {
-         stage("\u001B[31mI'm Build a Maven project \u001B[0m") {
+         stage('\u001B[31mI'm Build a Maven project \u001B[0m') {
                  git 'https://github.com/amenaafreen/spring-boot-maven-example-helloworld.git'
                 container('maven') {
                            sh '''\
