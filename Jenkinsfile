@@ -13,10 +13,10 @@ podTemplate(
                 git 'https://github.com/amenaafreen/spring-boot-maven-example-helloworld.git'
                 container('maven') {
                            sh '''  
-                                printf "\\033[1;32m"
+                                printf "\033[32m"
                                 export MAVEN_OPTS="-Dmaven.repo.local=/home/jenkins/workspace/.m2/repository" 
                                 mvn clean package
-                                printf "\\033[0m"
+                                printf "\033[0m"
                               '''
                 }
          }
